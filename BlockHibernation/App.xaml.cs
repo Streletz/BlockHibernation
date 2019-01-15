@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Engine;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -94,7 +95,10 @@ namespace BlockHibernation
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Сохранить состояние приложения и остановить все фоновые операции
+            Config.GetInstance().Save();
+            IdleTimerManager.RestoreIdleTimerDefaults();
             deferral.Complete();
         }
+        //protected override On
     }
 }

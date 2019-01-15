@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AutomationProperties.AccessibilityView="Control">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AutomationProperties.AccessibilityView="Control" >
 
     <Grid>
         <NavigationView  ItemInvoked="NavigationView_ItemInvoked" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutomationProperties.AccessibilityView="Content" Header="Управление блокировкой спящего режима" IsSettingsVisible="False" IsPaneOpen="True" IsBackButtonVisible="Collapsed" >

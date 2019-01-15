@@ -16,9 +16,9 @@
             <RowDefinition Height="45"/>
             <RowDefinition Height="799*"/>
         </Grid.RowDefinitions>
-        <CheckBox x:Name="noHibernationCheckBox" Content="Блокировать спящий режим" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" IsChecked="True" Height="32" Width="225"/>
+        <CheckBox x:Name="noHibernationCheckBox" Content="Блокировать спящий режим" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" IsChecked="True" Height="32" Width="225" Click="NoHibernationCheckBox_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Не даёт компьютеру перейти в спящий режим." TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Height="20" Width="344"/>
-        <CheckBox x:Name="noMonitorOffCheckBox" Content="Не отключать монитор" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="2" VerticalAlignment="Top" Height="32" Width="188"/>
+        <CheckBox x:Name="noMonitorOffCheckBox" Content="Не отключать монитор" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="2" VerticalAlignment="Top" Height="32" Width="188" Click="NoMonitorOffCheckBox_Click" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Не даёт отключиться монитору." TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Height="20" Width="237"/>
 
     </Grid>
