@@ -23,6 +23,7 @@ namespace BlockHibernation
     /// </summary>
     public sealed partial class HomePage : Page
     {
+        private Config _config;
         /// <summary>
         /// Таймер сброса таймеров спящего режима.
         /// </summary>
@@ -30,15 +31,25 @@ namespace BlockHibernation
         public HomePage()
         {
             this.InitializeComponent();
-            noHibernationCheckBox.IsChecked = Config.GetInstance().PcDontSleep;
-            noMonitorOffCheckBox.IsChecked = Config.GetInstance().MonitorDontSleep;
-            noMonitorOffCheckBox.IsEnabled = Config.GetInstance().PcDontSleep;
+            ReadStartConfig();
+
+
+        }
+        /// <summary>
+        /// Инициализация конфигурации.
+        /// </summary>
+        private async void ReadStartConfig()
+        {
+            _config = await Config.GetInstanceAsync();
+            noHibernationCheckBox.IsChecked = _config.PcDontSleep;
+            noMonitorOffCheckBox.IsChecked = _config.MonitorDontSleep;
+            noMonitorOffCheckBox.IsEnabled = _config.PcDontSleep;
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 10);
             timer.Tick += TimerTick;
             timer.Start();
-            
         }
+
         /// <summary>
         /// Включение/отключение спящего режима.
         /// </summary>
@@ -46,23 +57,23 @@ namespace BlockHibernation
         /// <param name="e"></param>
         private void NoHibernationCheckBox_Click(object sender, RoutedEventArgs e)
         {
-            Config.GetInstance().PcDontSleep = (bool)noHibernationCheckBox.IsChecked;
-            noMonitorOffCheckBox.IsEnabled = Config.GetInstance().PcDontSleep;            
+            _config.PcDontSleep = (bool)noHibernationCheckBox.IsChecked;
+            noMonitorOffCheckBox.IsEnabled = _config.PcDontSleep;
         }
         /// <summary>
         /// Режим работы таймера спящего режима.
         /// </summary>
         private void SetIdleTimerMode()
         {
-            if (!Config.GetInstance().PcDontSleep && (bool)noMonitorOffCheckBox.IsChecked)
+            if (!_config.PcDontSleep && (bool)noMonitorOffCheckBox.IsChecked)
             {
                 noMonitorOffCheckBox.IsChecked = false;
             }
-            if (Config.GetInstance().PcDontSleep && !Config.GetInstance().MonitorDontSleep)
+            if (_config.PcDontSleep && !_config.MonitorDontSleep)
             {
                 IdleTimerManager.PcDontSleep();
             }
-            else if (Config.GetInstance().PcDontSleep && Config.GetInstance().MonitorDontSleep)
+            else if (_config.PcDontSleep && _config.MonitorDontSleep)
             {
                 IdleTimerManager.PcAndMonitorDontSleep();
             }
@@ -79,7 +90,7 @@ namespace BlockHibernation
         /// <param name="e"></param>
         private void NoMonitorOffCheckBox_Click(object sender, RoutedEventArgs e)
         {
-            Config.GetInstance().MonitorDontSleep = (bool)noMonitorOffCheckBox.IsChecked;
+            _config.MonitorDontSleep = (bool)noMonitorOffCheckBox.IsChecked;
         }
         /// <summary>
         /// Обработка таймера сброса таймеров спящего режима.

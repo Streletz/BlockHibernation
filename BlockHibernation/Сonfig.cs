@@ -1,24 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using Windows.Storage;
 
 namespace BlockHibernation
 {
     /// <summary>
     /// Кофигурация приложения.
     /// </summary>
+    [Serializable]
     public class Config
     {
         private static Config _instance;
 
         private Config() { }
-        public static Config GetInstance()
+        public static async Task<Config> GetInstanceAsync()
         {
             if (_instance == null)
             {
-                _instance = new Config();
+                // Иницализация сохранённых настроек.
+                try
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Config));
+                    StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("config.xml");
+                    using (var fs = await file.OpenAsync(FileAccessMode.ReadWrite))
+                    {
+                        _instance = (Config)serializer.Deserialize(fs.AsStreamForRead());
+                    }
+                }
+                catch
+                {
+                    // Инициализация с параметрами по умолчанию.
+                    _instance = new Config();
+                }
             }
             return _instance;
         }
@@ -33,9 +52,26 @@ namespace BlockHibernation
         /// <summary>
         /// Сохранение кофигурации приложения.
         /// </summary>
-        public void Save()
+        public async void Save()
         {
-
+            XmlSerializer serializer = new XmlSerializer(typeof(Config));
+            StorageFile file = null;
+            try
+            {
+                file = await ApplicationData.Current.LocalFolder.GetFileAsync("config.xml");
+            }
+            catch (FileNotFoundException ex)
+            {
+                file = await ApplicationData.Current.LocalFolder.CreateFileAsync("config.xml");
+            }
+            using (var fs = await file.OpenAsync(FileAccessMode.ReadWrite))
+            {
+                serializer.Serialize(fs.AsStreamForWrite(), this);
+            }
+        }
+        private static string GetCurrentPath()
+        {
+            return Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
         }
     }
 }
