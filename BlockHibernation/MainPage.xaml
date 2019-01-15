@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="BlockHibernation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlockHibernation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AutomationProperties.AccessibilityView="Control">
+
+    <Grid>
+        <NavigationView  ItemInvoked="NavigationView_ItemInvoked" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AutomationProperties.AccessibilityView="Content" Header="Управление блокировкой спящего режима" IsSettingsVisible="False" IsPaneOpen="True" IsBackButtonVisible="Collapsed" >
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Name="home_item" IsSelected="True" Content="Главная">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Home"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem x:Name="about_item" Content="О Программе">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="ContactInfo"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <Frame Name="contentFrame" Margin="0,0,0,0" VerticalAlignment="Stretch"   >
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <ContentThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+                
+            </Frame>
+        </NavigationView>
+    </Grid>
+
+</Page>

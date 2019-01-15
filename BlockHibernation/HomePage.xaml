@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="BlockHibernation.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlockHibernation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="15,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="799*"/>
+        </Grid.RowDefinitions>
+        <CheckBox x:Name="noHibernationCheckBox" Content="Блокировать спящий режим" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" IsChecked="True" Height="32" Width="225"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Не даёт компьютеру перейти в спящий режим." TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Height="20" Width="344"/>
+        <CheckBox x:Name="noMonitorOffCheckBox" Content="Не отключать монитор" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="2" VerticalAlignment="Top" Height="32" Width="188"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Не даёт отключиться монитору." TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Height="20" Width="237"/>
+
+    </Grid>
+</Page>
