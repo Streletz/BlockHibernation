@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" IgnorableNamespaces="uap mp iot">
-  <Identity Name="0c009cdd-9863-4520-8ade-7124c1fc3461" Publisher="CN=Егор" Version="4.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="0c009cdd-9863-4520-8ade-7124c1fc3461" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="677Coder.50317B0F14B1B" Publisher="CN=EF2476E3-235D-421D-984F-476EF19707E5" Version="4.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="73de9d8e-e0a3-4056-a7df-102ae86b0095" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>BlockHibernation</DisplayName>
+    <DisplayName>Блокировщик спящего режима</DisplayName>
     <PublisherDisplayName>Стрелец Coder</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
