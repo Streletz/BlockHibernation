@@ -24,6 +24,16 @@ namespace BlockHibernation
         {
             this.InitializeComponent();
         }
-        
+
+        /// <summary>
+        /// Ссыдка на сайт разработчика.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            var uriBing = new Uri(@"http://streletzcoder.ru");            
+            var success = await Windows.System.Launcher.LaunchUriAsync(uriBing);
+        }
     }
 }

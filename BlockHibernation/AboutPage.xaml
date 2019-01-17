@@ -13,9 +13,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="О программе &quot;Блокировщик спящего режима&quot;" FontSize="22" FontWeight="Bold" VerticalAlignment="Top" TextWrapping="Wrap" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0"/>
         <TextBlock Text="Версия 4.0" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="1" />
+        <TextBlock Text="Стрелец Coder" Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="2" />
+        <HyperlinkButton Content="http://streletzcoder.ru/" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Center" Click="HyperlinkButton_Click"/>
+        <TextBlock Text="2018" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="4" />
     </Grid>
 
 </Page>
