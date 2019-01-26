@@ -1,5 +1,4 @@
-﻿//using Engine;
-using Engine;
+﻿using EngineUwp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,7 +31,7 @@ namespace BlockHibernation
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            Manager = new IdleTimerManagerNative();
+            Manager = new IdleTimerManagerUwp();
         }
 
         public IdleTimerManager Manager { get; set; }

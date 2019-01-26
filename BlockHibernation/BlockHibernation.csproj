@@ -18,11 +18,11 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>BlockHibernation_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>B64242DAA514EB89402B729DFF21E51085943F2E</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>4EEACAE869AD12B57161F8D5475196934EBA476D</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
     <AppxPackageDir>C:\Users\Егор\source\repos\BlockHibernation\BlockHibernation\AppPackages\123\</AppxPackageDir>
@@ -201,9 +201,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Engine\Engine.csproj">
-      <Project>{c48dca4a-f136-4ca5-8ef2-615b93373965}</Project>
-      <Name>Engine</Name>
+    <ProjectReference Include="..\EngineUwp\EngineUwp.csproj">
+      <Project>{c594eb30-8469-4b3f-8eb8-df29aa5cde37}</Project>
+      <Name>EngineUwp</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
