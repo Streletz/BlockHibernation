@@ -28,12 +28,11 @@ namespace BlockHibernation
         /// Таймер сброса таймеров спящего режима.
         /// </summary>
         private DispatcherTimer timer;
+        private IdleTimerManager _manager = ((App)Application.Current).Manager;
         public HomePage()
         {
             this.InitializeComponent();
             ReadStartConfig();
-
-
         }
         /// <summary>
         /// Инициализация конфигурации.
@@ -71,15 +70,15 @@ namespace BlockHibernation
             }
             if (_config.PcDontSleep && !_config.MonitorDontSleep)
             {
-                IdleTimerManager.PcDontSleep();
+                _manager.PcDontSleep();
             }
             else if (_config.PcDontSleep && _config.MonitorDontSleep)
             {
-                IdleTimerManager.PcAndMonitorDontSleep();
+                _manager.PcAndMonitorDontSleep();
             }
             else
             {
-                IdleTimerManager.RestoreIdleTimerDefaults();
+                _manager.RestoreIdleTimerDefaults();
             }
         }
 

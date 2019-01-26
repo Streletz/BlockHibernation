@@ -1,4 +1,5 @@
-﻿using Engine;
+﻿//using Engine;
+using Engine;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +32,10 @@ namespace BlockHibernation
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Manager = new IdleTimerManagerNative();
         }
+
+        public IdleTimerManager Manager { get; set; }
 
         /// <summary>
         /// Вызывается при обычном запуске приложения пользователем.  Будут использоваться другие точки входа,
@@ -96,7 +100,7 @@ namespace BlockHibernation
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Сохранить состояние приложения и остановить все фоновые операции
             (await Config.GetInstanceAsync()).Save();
-            IdleTimerManager.RestoreIdleTimerDefaults();
+            Manager.RestoreIdleTimerDefaults();
             deferral.Complete();
         }
         //protected override On
