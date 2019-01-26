@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockHibernation", "BlockHibernation\BlockHibernation.csproj", "{762F13D8-6683-49C7-822B-1148747BE165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{C48DCA4A-F136-4CA5-8EF2-615B93373965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Engine", "Engine\Engine.csproj", "{C48DCA4A-F136-4CA5-8EF2-615B93373965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{762F13D8-6683-49C7-822B-1148747BE165}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{762F13D8-6683-49C7-822B-1148747BE165}.Debug|Any CPU.Build.0 = Debug|x86
+		{762F13D8-6683-49C7-822B-1148747BE165}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{762F13D8-6683-49C7-822B-1148747BE165}.Debug|ARM.ActiveCfg = Debug|ARM
 		{762F13D8-6683-49C7-822B-1148747BE165}.Debug|ARM.Build.0 = Debug|ARM
 		{762F13D8-6683-49C7-822B-1148747BE165}.Debug|ARM.Deploy.0 = Debug|ARM

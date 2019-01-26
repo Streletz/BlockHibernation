@@ -9,7 +9,7 @@ namespace Engine
     /// </summary>
     public class IdleTimerManager
     {
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
         static extern uint SetThreadExecutionState(EXECUTION_STATE esFlags);
         /// <summary>
         /// Управление сборосом спящего режима вручную.
