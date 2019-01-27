@@ -98,10 +98,8 @@ namespace BlockHibernation
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Сохранить состояние приложения и остановить все фоновые операции
-            (await Config.GetInstanceAsync()).Save();
-            Manager.RestoreIdleTimerDefaults();
+            (await Config.GetInstanceAsync()).Save();            
             deferral.Complete();
-        }
-        //protected override On
+        }        
     }
 }

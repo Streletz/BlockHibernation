@@ -57,7 +57,7 @@ namespace BlockHibernation
         private void NoHibernationCheckBox_Click(object sender, RoutedEventArgs e)
         {
             _config.PcDontSleep = (bool)noHibernationCheckBox.IsChecked;
-            noMonitorOffCheckBox.IsEnabled = _config.PcDontSleep;
+            noMonitorOffCheckBox.IsEnabled = _config.PcDontSleep;            
         }
         /// <summary>
         /// Режим работы таймера спящего режима.
@@ -75,15 +75,11 @@ namespace BlockHibernation
             else if (_config.PcDontSleep && _config.MonitorDontSleep)
             {
                 _manager.PcAndMonitorDontSleep();
-            }
-            else
-            {
-                _manager.RestoreIdleTimerDefaults();
-            }
+            }            
         }
 
         /// <summary>
-        /// Включение/откючение выключения монитора.
+        /// Включение/откючение выключения монитора. (откл.)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
